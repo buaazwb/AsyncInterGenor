@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cc.kaffa.rd</groupId>
+	<artifactId>async-inter-genor</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<!-- project properties -->
+		<java.version>1.8</java.version>
+		<maven_source_plugin.version>3.0.1</maven_source_plugin.version>
+		<maven_compiler_plugin.version>3.6.0</maven_compiler_plugin.version>
+		<maven_javadoc_plugin.version>2.10.4</maven_javadoc_plugin.version>
+		<maven_source_encoding>UTF-8</maven_source_encoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>cc.kaffa.rd</groupId>
+			<artifactId>async-annotation</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup</groupId>
+			<artifactId>javapoet</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven_source_plugin.version}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven_javadoc_plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven_compiler_plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${maven_source_encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<developers>
+		<developer>
+			<name>zhouwenbo</name>
+			<organization>kaffa</organization>
+			<email>zhouwenbo@kaffa.cc</email>
+		</developer>
+	</developers>
+</project>
